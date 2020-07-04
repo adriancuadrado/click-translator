@@ -3,7 +3,7 @@
 
 $(() => {
     let wordReference = null;
-    let googleTranslate = null;window.open('https://translate.google.com/', null, 'width=300,height=250');
+    let googleTranslate = null;
     let down = false;
     let move = false;
     let up = false;
