@@ -1,6 +1,8 @@
+// TODO Open each window only if it wasn't previouslt open so that the windows are not open when the user access a website, but when he clicks on a word.
+
 $(() => {
-    let wordReference = window.open('http://wordreference.com/', null, 'width=300,height=250');
-    let googleTranslate = window.open('https://translate.google.com/', null, 'width=300,height=250');
+    let wordReference = null;
+    let googleTranslate = null;window.open('https://translate.google.com/', null, 'width=300,height=250');
     let down = false;
     let move = false;
     let up = false;
@@ -22,10 +24,21 @@ $(() => {
     })
     .mouseup(function () {
         if(down && move) {
-            googleTranslate.location.replace(
-                `https://translate.google.com/?source=osdd#view=home&op=translate&sl=en&tl=es&text=${
-                encodeURIComponent(window.getSelection().toString())}`
-            );
+            if(!googleTranslate) {
+                googleTranslate = window.open(
+                    `https://translate.google.com/?source=osdd#view=home&op=translate&sl=en&tl=es&text=${
+                        encodeURIComponent(window.getSelection().toString())
+                    }`,
+                    null,
+                    'width=300,height=250'
+                );
+            } else {
+                googleTranslate.location.replace(
+                    `https://translate.google.com/?source=osdd#view=home&op=translate&sl=en&tl=es&text=${
+                        encodeURIComponent(window.getSelection().toString())
+                    }`
+                );
+            }
             googleTranslate.focus();
             down = false;
             move = false;
@@ -49,7 +62,15 @@ $(() => {
         // You should be able to automatically get width, height and size of the
         // popup automatically with a button that fills those fields by using the
         // current values of the popup.
-        wordReference.location.replace(`http://wordreference.com/definition/${word}`);
+        if(!wordReference) {
+            wordReference = window.open(
+                `http://wordreference.com/definition/${word}`,
+                null,
+                'width=300,height=250'
+            );
+        } else {
+            wordReference.location.replace(`http://wordreference.com/definition/${word}`);
+        }
         wordReference.focus();
     });
 })
