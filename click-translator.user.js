@@ -11,10 +11,17 @@
 
 (function( $ ) {
 
-    $(() => {
-        // TODO Open each window only if it wasn't previouslt open so that the windows are not open when the user access a website, but when he clicks on a word.
-        // TODO Make this a Google Chrome plugin
+    // TODO Make this a Google Chrome plugin
 
+    config = {
+        selector: 'p',
+        top: 100,
+        left: 100,
+        width: 1000,
+        height: 1000
+    };
+
+    $(() => {
         let wordReference = null;
         let googleTranslate = null;
         let down = false;
@@ -23,7 +30,7 @@
         let x = 0;
         let y = 0;
 
-        $('body > section > div:nth-child(2) > div > div > div.content.wl > div.content-center.wl > p')
+        $(config.selector)
         .mousedown(function (e) {
             x = e.offsetX;
             y = e.offsetY;
@@ -43,8 +50,8 @@
                         `https://translate.google.com/?source=osdd#view=home&op=translate&sl=en&tl=es&text=${
                             encodeURIComponent(window.getSelection().toString())
                         }`,
-                        'googleTranslate',
-                        'width=300,height=250'
+                        'GoogleTranslate',
+                        `top=${config.top},left=${config.left},width=${config.width},height=${config.height}`
                     );
                 } else {
                     googleTranslate.location.replace(
@@ -79,27 +86,27 @@
             if(!wordReference) {
                 wordReference = window.open(
                     `http://wordreference.com/definition/${word}`,
-                    'wordReference',
-                    'width=300,height=250'
+                    'WordReference',
+                    `top=${config.top},left=${config.left},width=${config.width},height=${config.height}`
                 );
             } else {
                 wordReference.location.replace(`http://wordreference.com/definition/${word}`);
             }
             wordReference.focus();
         });
-    })
 
-    function getFirstCharacters(text) {
-        return text.slice(0, text.search(/[^\w]/));
-    }
-
-    function getLastCharacters(text) {
-        return text.slice(text.search(/\w+$/));
-    }
-
-    function getWordAt(text, index) {
-        return getLastCharacters(text.slice(0, index)) +
-            getFirstCharacters(text.slice(index))
-    }
+        function getFirstCharacters(text) {
+            return text.slice(0, text.search(/[^\w]/));
+        }
+    
+        function getLastCharacters(text) {
+            return text.slice(text.search(/\w+$/));
+        }
+    
+        function getWordAt(text, index) {
+            return getLastCharacters(text.slice(0, index)) +
+                getFirstCharacters(text.slice(index))
+        }
+    });
 
 })( jQuery );
