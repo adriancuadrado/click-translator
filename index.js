@@ -10,7 +10,7 @@ $(() => {
     let x = 0;
     let y = 0;
 
-    $('p')
+    $('body > section > div:nth-child(2) > div > div > div.content.wl > div.content-center.wl > p')
     .mousedown(function (e) {
         x = e.offsetX;
         y = e.offsetY;
