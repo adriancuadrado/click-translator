@@ -30,7 +30,7 @@ $(() => {
                     `https://translate.google.com/?source=osdd#view=home&op=translate&sl=en&tl=es&text=${
                         encodeURIComponent(window.getSelection().toString())
                     }`,
-                    null,
+                    'googleTranslate',
                     'width=300,height=250'
                 );
             } else {
@@ -66,7 +66,7 @@ $(() => {
         if(!wordReference) {
             wordReference = window.open(
                 `http://wordreference.com/definition/${word}`,
-                null,
+                'wordReference',
                 'width=300,height=250'
             );
         } else {
