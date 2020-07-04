@@ -1,3 +1,14 @@
+// ==UserScript==
+// @name         Click Translator
+// @namespace    https://github.com/adriancuadrado/click-translator
+// @version      0.1
+// @description  try to take over the world!
+// @author       You
+// @match        http://novelfreereadonline.com/*
+// @grant        none
+// @require      https://code.jquery.com/jquery-3.5.1.min.js
+// ==/UserScript==
+
 // TODO Open each window only if it wasn't previouslt open so that the windows are not open when the user access a website, but when he clicks on a word.
 // TODO Make this a Google Chrome plugin
 
