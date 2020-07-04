@@ -1,4 +1,5 @@
 // TODO Open each window only if it wasn't previouslt open so that the windows are not open when the user access a website, but when he clicks on a word.
+// TODO Make this a Google Chrome plugin
 
 $(() => {
     let wordReference = null;
