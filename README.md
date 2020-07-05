@@ -36,4 +36,4 @@ Some webbrowsers might block popups. Make sure yours don't by telling the webbro
     * **left**: Same as top, but from the left side of your screen.
     * **width**: Popup's width.
     * **height**: Popup's height.
-    * **language**: Language to translate the selection to. This is replaced as is in the Google Translate's url.
+    * **language**: Language to translate the selection to. This is replaced as-is in the Google Translate's url.
