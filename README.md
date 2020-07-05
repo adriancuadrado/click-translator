@@ -2,7 +2,7 @@
 
 ## Installation:
 
-Just click this link: https://github.com/adriancuadrado/click-translator/raw/master/index.user.js
+Just click this link: https://github.com/adriancuadrado/click-translator/raw/master/click-translator.user.js
 
 ## Usage:
 
