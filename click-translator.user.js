@@ -4,7 +4,7 @@
 // @version      0.1
 // @description  try to take over the world!
 // @author       You
-// @match        http://novelfreereadonline.com/*
+// @match        http://*/*
 // @grant        none
 // @require      https://code.jquery.com/jquery-3.5.1.min.js
 // ==/UserScript==
@@ -13,12 +13,13 @@
 
     // TODO Make this a Google Chrome plugin
 
-    config = {
+    let config = {
         selector: 'p',
         top: 100,
         left: 100,
         width: 1000,
-        height: 1000
+        height: 1000,
+        language: 'es'
     };
 
     $(() => {
@@ -45,9 +46,9 @@
         })
         .mouseup(function () {
             if(down && move) {
-                if(!googleTranslate) {
+                if(!googleTranslate || googleTranslate.closed) {
                     googleTranslate = window.open(
-                        `https://translate.google.com/?source=osdd#view=home&op=translate&sl=en&tl=es&text=${
+                        `https://translate.google.com/?source=osdd#view=home&op=translate&sl=en&tl=${config.language}&text=${
                             encodeURIComponent(window.getSelection().toString())
                         }`,
                         'GoogleTranslate',
@@ -55,7 +56,7 @@
                     );
                 } else {
                     googleTranslate.location.replace(
-                        `https://translate.google.com/?source=osdd#view=home&op=translate&sl=en&tl=es&text=${
+                        `https://translate.google.com/?source=osdd#view=home&op=translate&sl=en&tl=${config.language}&text=${
                             encodeURIComponent(window.getSelection().toString())
                         }`
                     );
@@ -83,7 +84,7 @@
             // You should be able to automatically get width, height and size of the
             // popup automatically with a button that fills those fields by using the
             // current values of the popup.
-            if(!wordReference) {
+            if(!wordReference || wordReference.closed) {
                 wordReference = window.open(
                     `http://wordreference.com/definition/${word}`,
                     'WordReference',
