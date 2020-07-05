@@ -11,8 +11,6 @@
 
 (function( $ ) {
 
-    // TODO Make this a Google Chrome plugin
-
     let config = {
         selector: 'p',
         top: 100,
@@ -76,14 +74,6 @@
             let sel = window.getSelection();
             let text = sel.anchorNode.nodeValue;
             let word = getWordAt(text, sel.anchorOffset);
-            // TODO: Use screen.width, screen.height to get the size of the screen
-            // and then use top, left, width and height to put the new popup in the
-            // correct place with the correct size. You should be able to configure
-            // the plugin to select whether you want the popup in the left or right
-            // side of the screen too.
-            // You should be able to automatically get width, height and size of the
-            // popup automatically with a button that fills those fields by using the
-            // current values of the popup.
             if(!wordReference || wordReference.closed) {
                 wordReference = window.open(
                     `http://wordreference.com/definition/${word}`,
