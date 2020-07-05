@@ -32,7 +32,8 @@ Some webbrowsers might block popups. Make sure yours don't by telling the webbro
     };
     ```
     * **selector**: The css selector that selects all html elements whose text is subject to be clickable i.e. those elements that contain text you want to translate with google translate or know about it's definition with wordreference.
-    * **top**: number of pixels from the top of your screen where the popups will appear by default.
-    * **left**: same as top, but from the left side of your screen.
-    * **width**: popup's width.
-    * **height**: popup's height.
+    * **top**: Number of pixels from the top of your screen where the popups will appear by default.
+    * **left**: Same as top, but from the left side of your screen.
+    * **width**: Popup's width.
+    * **height**: Popup's height.
+    * **language**: Language to translate the selection to. This is replaced as is in the Google Translate's url.
