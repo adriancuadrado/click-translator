@@ -4,7 +4,6 @@
 // @version      0.1
 // @description  try to take over the world!
 // @author       adriancuadradochavarria97@gmail.com
-// @match        http://*/*
 // @grant        none
 // @require      https://code.jquery.com/jquery-3.5.1.min.js
 // ==/UserScript==

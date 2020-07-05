@@ -4,6 +4,16 @@
 
 Just click this link: https://github.com/adriancuadrado/click-translator/raw/master/click-translator.user.js
 
+Afterwards you will have to indicate yourself in which websites you want to use this plugin by going to:
+1. TamperMoneky
+1. Dashboard
+1. Click Translator
+1. Settings
+1. User includes
+1. Add...
+1. Write the website's url. Remember, it must end with an **asterisk**.  
+Example: http://novelfreereadonline.com/*
+
 ## Usage:
 
 Click in a word in any website to have it's definition displayed in a new popup with [WordReference](http://wordreference.com/).
@@ -16,11 +26,10 @@ Some webbrowsers might block popups. Make sure yours don't by telling the webbro
 
 ## Configuration:
 
-1. In the header of this script, make sure to set the correct value to `// @match`. The default value makes this script work in any website. Just replace `http://*/*` with the website you want to use this TamperMonkey script using optionally [glob patterns](https://en.wikipedia.org/wiki/Glob_(programming)).
+1.  --> User includes --> Add... --> Write the url of the website where you want this plugin to work, and make sure it ends with an asterisk. For instance:
+http://novelfreereadonline.com/*
 
-    For instance, if you are going to use this plugin while reading books in http://novelfreereadonline.com/, you would have to replace the default value with http://novelfreereadonline.com/*
-
-2. Inside the script change the `config` variable with the value that best suits your preferences. It's default value is this:
+1. Inside the script change the `config` variable with the value that best suits your preferences. It's default value is this:
     ```js
     let config = {
         selector: 'p',
