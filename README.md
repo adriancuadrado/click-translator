@@ -6,9 +6,9 @@ Just click this link: https://github.com/adriancuadrado/click-translator/raw/mas
 
 ## Usage:
 
-Click in a word in any website to have it's definition displayed in a new popup with wordreference.
+Click in a word in any website to have it's definition displayed in a new popup with [WordReference](http://wordreference.com/).
 
-Select some text in any website to have it translated in google translate.
+Select some text in any website to have it translated in [Google Translate](https://translate.google.com/).
 
 Some webbrowsers might block popups. Make sure yours don't by telling the webbrowser in turn to not block the popup:
 * **Chrome**: https://support.google.com/chrome/answer/95472?co=GENIE.Platform%3DDesktop&hl=en
