@@ -6,6 +6,8 @@
 // @author       adriancuadradochavarria97@gmail.com
 // @grant        none
 // @require      https://code.jquery.com/jquery-3.5.1.min.js
+// @downloadURL  https://github.com/adriancuadrado/click-translator/raw/master/click-translator.user.js
+// @updateURL    https://github.com/adriancuadrado/click-translator/raw/master/click-translator.user.js
 // ==/UserScript==
 
 $(() => {
