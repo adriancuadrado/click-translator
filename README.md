@@ -2,10 +2,12 @@
 
 ## Installation:
 
-Just click this link: https://github.com/adriancuadrado/click-translator/raw/master/click-translator.user.js
+Install TamperMonkey's plugin for your web browser: https://www.tampermonkey.net/
+
+Once installed, click this link: https://github.com/adriancuadrado/click-translator/raw/master/click-translator.user.js
 
 Afterwards you will have to indicate yourself in which websites you want to use this plugin by going to:
-1. TamperMoneky
+1. TamperMonkey's plugin
 1. Dashboard
 1. Click Translator
 1. Settings
@@ -26,23 +28,21 @@ Some webbrowsers might block popups. Make sure yours don't by telling the webbro
 
 ## Configuration:
 
-1.  --> User includes --> Add... --> Write the url of the website where you want this plugin to work, and make sure it ends with an asterisk. For instance:
-http://novelfreereadonline.com/*
-
-1. Inside the script change the `config` variable with the value that best suits your preferences. It's default value is this:
-    ```js
-    let config = {
-        selector: 'p',
-        top: 100,
-        left: 100,
-        width: 1000,
-        height: 1000,
-        language: 'es'
-    };
-    ```
-    * **selector**: The css selector that selects all html elements whose text is subject to be clickable i.e. those elements that contain text you want to translate with google translate or know about it's definition with wordreference.
-    * **top**: Number of pixels from the top of your screen where the popups will appear by default.
-    * **left**: Same as top, but from the left side of your screen.
-    * **width**: Popup's width.
-    * **height**: Popup's height.
-    * **language**: Language to translate the selection to. This is replaced as-is in the Google Translate's url.
+Inside the script set the **`config`** variable with the values that best suits your preferences.  
+This is t's default value:
+```js
+let config = {
+    selector: 'p',
+    top: 100,
+    left: 100,
+    width: 1000,
+    height: 1000,
+    language: 'es'
+};
+```
+* **selector**: The css selector that selects all html elements whose text is subject to be clickable i.e. those elements that contain text you want to translate with google translate or know about it's definition with wordreference.
+* **top**: Number of pixels from the top of your screen where the popups will appear by default.
+* **left**: Same as top, but from the left side of your screen.
+* **width**: Popup's width.
+* **height**: Popup's height.
+* **language**: Language to translate the selection to. This is replaced as-is in the Google Translate's url.
