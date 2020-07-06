@@ -61,21 +61,6 @@
                         wordReference.focus();
                     }
                 }
-            })
-            .click(function () {
-                let sel = window.getSelection();
-                let text = sel.anchorNode.nodeValue;
-                let word = getWordAt(text, sel.anchorOffset);
-                if (!wordReference || wordReference.closed) {
-                    wordReference = window.open(
-                        `http://wordreference.com/definition/${word}`,
-                        'WordReference',
-                        `top=${config.top},left=${config.left},width=${config.width},height=${config.height}`
-                    );
-                } else {
-                    wordReference.location.replace(`http://wordreference.com/definition/${word}`);
-                }
-                wordReference.focus();
             });
 
         function getFirstCharacters(text) {
