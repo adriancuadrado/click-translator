@@ -6,6 +6,7 @@
 // @author       adriancuadradochavarria97@gmail.com
 // @grant        none
 // @require      https://code.jquery.com/jquery-3.5.1.min.js
+// @updateURL
 // ==/UserScript==
 
 (function ($) {
