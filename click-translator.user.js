@@ -6,21 +6,21 @@
 // @author       adriancuadradochavarria97@gmail.com
 // @grant        none
 // @require      https://code.jquery.com/jquery-3.5.1.min.js
-// @updateURL    https://github.com/adriancuadrado/click-translator/raw/master/click-translator.user.js
 // ==/UserScript==
 
-(function ($) {
-
-    let config = {
-        selector: 'p',
-        top: 100,
-        left: 100,
-        width: 1000,
-        height: 1000,
-        language: 'es'
-    };
-
     $(() => {
+        
+        let config = {
+            selector: 'p',
+            top: 100,
+            left: 100,
+            width: 1000,
+            height: 1000,
+            language: 'es',
+            useGoogleTranslate: true,
+            useWordReference: true
+        };
+
         let wordReference = null;
         let googleTranslate = null;
 
@@ -28,7 +28,7 @@
             .mouseup(function () {
                 let selection = window.getSelection();
                 let selectedText = selection.toString();
-                if (selectedText) {
+                if (selectedText && config.useGoogleTranslate) {
                     if (!googleTranslate || googleTranslate.closed) {
                         googleTranslate = window.open(
                             `https://translate.google.com/?source=osdd#view=home&op=translate&sl=en&tl=${config.language}&text=${
@@ -46,7 +46,7 @@
                     }
                     googleTranslate.focus();
                     return;
-                } else {
+                } else if (config.useWordReference) {
                     let text = selection.anchorNode.nodeValue;
                     let word = getWordAt(text, selection.anchorOffset);
                     if (word) {
@@ -80,6 +80,5 @@
             return getLastCharacters(text.slice(0, index)) +
                 getFirstCharacters(text.slice(index))
         }
-    });
 
-})(jQuery);
+    })(jQuery);
