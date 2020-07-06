@@ -68,7 +68,11 @@
         }
 
         function getLastCharacters(text) {
-            return text.slice(text.search(/\w+$/));
+            let index = text.search(/\w+$/);
+            if(index == -1) {
+                return '';
+            }
+            return text.slice(index);
         }
 
         function getWordAt(text, index) {
