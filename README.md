@@ -29,7 +29,7 @@ Some webbrowsers might block popups. Make sure yours don't by telling the webbro
 ## Configuration:
 
 Inside the script set the **`config`** variable with the values that best suits your preferences.  
-This is t's default value:
+This is it's default value:
 ```js
 let config = {
     selector: 'p',
