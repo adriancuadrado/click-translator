@@ -20,7 +20,7 @@ Example: http://novelfreereadonline.com/*
 
 Click in a word in any website to have it's definition displayed in a new popup with [WordReference](http://wordreference.com/).
 
-Select some text in any website to have it translated in [Google Translate](https://translate.google.com/).
+Select some text or doubleclick a word in any website to have it translated in [Google Translate](https://translate.google.com/).
 
 Some webbrowsers might block popups. Make sure yours don't by telling the webbrowser in turn to not block the popup:
 * **Chrome**: https://support.google.com/chrome/answer/95472?co=GENIE.Platform%3DDesktop&hl=en
@@ -37,7 +37,9 @@ let config = {
     left: 100,
     width: 1000,
     height: 1000,
-    language: 'es'
+    language: 'es',
+    useGoogleTranslate: true,
+    useWordReference: true
 };
 ```
 * **selector**: The css selector that selects all html elements whose text is subject to be clickable i.e. those elements that contain text you want to translate with google translate or know about it's definition with wordreference.
@@ -46,3 +48,5 @@ let config = {
 * **width**: Popup's width.
 * **height**: Popup's height.
 * **language**: Language to translate the selection to. This is replaced as-is in the Google Translate's url.
+* **useGoogleTranslate**: If set to false, no popup with Google Translate will be opened.
+* **useWordReference**: If set to false, no popup with Word Reference will be opened.
