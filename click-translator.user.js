@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Click Translator
 // @namespace    https://github.com/adriancuadrado/click-translator
-// @version      1.0
+// @version      1.1
 // @description  try to take over the world!
 // @author       adriancuadradochavarria97@gmail.com
 // @grant        none
