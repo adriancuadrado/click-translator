@@ -6,7 +6,7 @@
         {
             "label": "git",
             "type": "shell",
-            "command": "git add -A; git commit --quiet --allow-empty-message --message ''; git push --quiet;"
+            "command": "git add -A; git commit -q --allow-empty-message -m ''; git push -q;"
         }
     ]
 }
