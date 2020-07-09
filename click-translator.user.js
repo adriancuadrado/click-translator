@@ -67,11 +67,7 @@ $(() => {
         });
 
     function getFirstCharacters(text) {
-        let index = text.search(/[^\w]/);
-        if (index == -1) {
-            return '';
-        }
-        return text.slice(index);
+        return text.slice(0, text.search(/[^\w]/));
     }
 
     function getLastCharacters(text) {
