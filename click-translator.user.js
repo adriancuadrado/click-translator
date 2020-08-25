@@ -10,27 +10,35 @@
 // @updateURL    https://github.com/adriancuadrado/click-translator/raw/master/click-translator.user.js
 // ==/UserScript==
 
-$(() => {
+function docReady(fn) {
+    // see if DOM is already available
+    if (document.readyState === "complete" || document.readyState === "interactive") {
+        // call on next available tick
+        setTimeout(fn, 1);
+    } else {
+        document.addEventListener("DOMContentLoaded", fn);
+    }
+}
 
+docReady(() => {
     let config = {
-        selector: 'p',
         top: 100,
         left: 100,
         width: 1000,
         height: 1000,
-        language: 'es',
-        useGoogleTranslate: true,
-        useWordReference: true
+        language: 'es'
     };
 
     let wordReference = null;
     let googleTranslate = null;
 
-    $(config.selector)
-        .mouseup(function () {
+    document
+    .querySelectorAll('p')
+    .forEach(e => e.addEventListener('mouseup',
+        function () {
             let selection = window.getSelection();
             let selectedText = selection.toString();
-            if (selectedText && config.useGoogleTranslate) {
+            if (selectedText) {
                 if (!googleTranslate || googleTranslate.closed) {
                     googleTranslate = window.open(
                         `https://translate.google.com/?source=osdd#view=home&op=translate&sl=en&tl=${config.language}&text=${
@@ -48,7 +56,7 @@ $(() => {
                 }
                 googleTranslate.focus();
                 return;
-            } else if (config.useWordReference) {
+            } else {
                 let text = selection.anchorNode.nodeValue;
                 let word = getWordAt(text, selection.anchorOffset);
                 if (word) {
@@ -64,7 +72,7 @@ $(() => {
                     wordReference.focus();
                 }
             }
-        });
+        }));
 
     function getFirstCharacters(text) {
         return text.slice(0, text.search(/[^\w]/));
@@ -83,4 +91,4 @@ $(() => {
             getFirstCharacters(text.slice(index))
     }
 
-})(jQuery);
+});
